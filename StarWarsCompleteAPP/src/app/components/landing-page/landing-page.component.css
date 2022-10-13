@@ -1,0 +1,21 @@
+.main{
+  max-width: 80%;
+}
+app-header{
+  max-width: 20%;
+}
+
+.tarjeta {
+  float: right;
+  color: white;
+}
+
+.tarjeta img {
+  padding: 5px;
+  width: 50% ;
+}
+
+.paginacion button {
+  padding: 1%;
+
+}
