@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './modules/material-imports.module';
+import { TablapruebaComponent } from './components/tablaprueba/tablaprueba.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TablapruebaComponent
   ],
   imports: [
     BrowserModule,
