@@ -1,18 +1,25 @@
 <h1>PERSONAJES</h1>
-<div>
-    <button mat-raised-button color="warn" routerLink="/landing" routerLinkActive="active">Volver a inicio</button>
-<div>
-<mat-button-toggle-group name="paginacionPersonajes" aria-label="Paginación de personajes">
-    <mat-button-toggle *ngFor="let pagina of contadorPaginas(); let i = index" (click)="getCharactersPage(i+1)">{{i+1}}</mat-button-toggle>
-</mat-button-toggle-group>
-<div class = "container">
-    <mat-card class="tarjeta" *ngFor="let personaje of characterList">
-        <mat-card-header>
-            <mat-card-title>{{personaje.name}}</mat-card-title>
-            <mat-card-subtitle>Fecha de nacimiento: {{personaje.birth_year}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="getFotoPersonaje(personaje)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt={{personaje.name}}>
-        <mat-card-content>Peso: {{personaje.mass}} Kg</mat-card-content>
 
-    </mat-card>
-</div>
+<body>
+    <div class="navigate">
+        <div>
+        <a routerLink="/landing" routerLinkActive="active" class = "inicio"><span>Inicio</span></a><span> / Personajes</span>
+        </div>
+        <mat-button-toggle-group name="paginacionPersonajes" aria-label="Paginación de personajes" class="pagination">
+            <mat-button-toggle [disabled]="page == 1" (click)="getCharactersPage(page-1)">&#60;</mat-button-toggle>
+            <mat-button-toggle [checked]="page == i+1" *ngFor="let pagina of contadorPaginas(); let i = index" (click)="getCharactersPage(i+1)">{{i+1}}</mat-button-toggle>
+            <mat-button-toggle [disabled]="page == 9" (click)="getCharactersPage(page+1)">&#62;</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div class = "container">
+        <mat-card class="tarjeta" *ngFor="let personaje of characterList">
+            <mat-card-header>
+                <mat-card-title>{{personaje.name}}</mat-card-title>
+                <mat-card-subtitle>Fecha de nacimiento: {{personaje.birth_year}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="getFotoPersonaje(personaje)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt={{personaje.name}}>
+            <mat-card-content>Peso: {{personaje.mass}} Kg</mat-card-content>
+
+        </mat-card>
+    </div>
+</body>
