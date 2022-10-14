@@ -11,6 +11,7 @@ export class CharacterComponent implements OnInit {
 
   characterList: Character[]= [];
   pages = 0;
+  page = 0;
 
   constructor(private characterService: CharacterService) { }
 
@@ -21,6 +22,7 @@ export class CharacterComponent implements OnInit {
   }
 
   getCharactersPage(page: number) {
+    this.page = page;
     this.characterService.getCharacters(page).subscribe(respuesta => {
       this.characterList = respuesta.results;
       this.pages = Math.ceil(respuesta.count / 10)
