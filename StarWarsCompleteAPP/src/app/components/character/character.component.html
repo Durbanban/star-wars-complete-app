@@ -1,9 +1,9 @@
 <h1>PERSONAJES</h1>
 
-<body>
+<div class="mainContainer">
     <div class="navigate">
         <div>
-        <a routerLink="/landing" routerLinkActive="active" class = "inicio"><span>Inicio</span></a><span> / Personajes</span>
+        <a routerLink="/landing" routerLinkActive="active" class = "inicio"><span>Inicio</span></a><span class = "personajes"> / Personajes</span>
         </div>
         <mat-button-toggle-group name="paginacionPersonajes" aria-label="Paginación de personajes" class="pagination">
             <mat-button-toggle [disabled]="page == 1" (click)="getCharactersPage(page-1)">&#60;</mat-button-toggle>
@@ -22,4 +22,4 @@
 
         </mat-card>
     </div>
-</body>
+</div>
