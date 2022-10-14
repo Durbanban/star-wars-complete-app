@@ -12,6 +12,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { FilmsComponent } from './components/films/films.component';
+import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { StarshipsComponent } from './components/starships/starships.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     PlanetComponent,
     SpeciesComponent,
     NotFoundComponent,
+    FilmsComponent,
+    VehiclesComponent,
+    StarshipsComponent,
   ],
   imports: [
     BrowserModule,
