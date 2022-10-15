@@ -11,6 +11,7 @@ export class FilmsComponent implements OnInit {
 
   listadoFilms: Film [] | undefined;
   numPages = 0;
+  page=0;
   constructor(private filmService: FilmService) { }
 
   ngOnInit(): void {
@@ -28,5 +29,8 @@ export class FilmsComponent implements OnInit {
   public getPhotoURL(f: Film): String {
     return `https://starwars-visualguide.com/assets/img/films/${f.url.split('/')[5]}.jpg`;
   }
-  
+
+  contadorPaginas(){
+    return Array(this.numPages)
+  }
 }
