@@ -11,6 +11,7 @@ export class StarshipsComponent implements OnInit {
 
 listadoStarShips: starShip[] | undefined;
 numPages = 0;
+page=0;
 
   constructor(private starShipService: StarShipService) { }
 
