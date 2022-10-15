@@ -12,6 +12,7 @@ export class CharacterComponent implements OnInit {
   characterList: Character[]= [];
   pages = 0;
   page = 0;
+  idPersonaje: any;
 
   constructor(private characterService: CharacterService) { }
 
@@ -35,8 +36,8 @@ export class CharacterComponent implements OnInit {
   }
 
   getFotoPersonaje(personaje: Character) {
-    let id = personaje.url.split("/")[5];
-    return `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
+    this.idPersonaje = personaje.url.split("/")[5];
+    return `https://starwars-visualguide.com/assets/img/characters/${this.idPersonaje}.jpg`;
   }
 
 }

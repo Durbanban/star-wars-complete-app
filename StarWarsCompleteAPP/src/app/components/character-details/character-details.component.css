@@ -1,0 +1,30 @@
+span.personaje{
+    font-weight: 400;
+    font-size: 1.5em;
+    font-family: 'Biko', sans-serif;
+    letter-spacing: 0.4em;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #81D4FA;
+    font-weight: 400;
+    font-family: 'Biko', sans-serif;
+                                                
+    letter-spacing: 0.4em;
+}
+
+.mainContainer {
+    width: 80%;
+    margin: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.info > div {
+    background-color: white;
+}

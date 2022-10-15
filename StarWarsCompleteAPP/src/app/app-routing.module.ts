@@ -8,8 +8,10 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { StarshipsComponent } from './components/starships/starships.component';
 import { FilmsComponent } from './components/films/films.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 
 const routes: Routes = [
+  {path: 'character-details/:id', component: CharacterDetailsComponent},
   {path: 'characters', component: CharacterComponent},
   {path: 'landing',component: LandingPageComponent},
   {path: '',redirectTo:'/landing', pathMatch: 'full'},

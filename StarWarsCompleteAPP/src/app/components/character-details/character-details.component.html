@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class = "mainContainer">
+    <div>
+        <a routerLink="/landing" routerLinkActive="active" class = "inicio"><span>Inicio</span></a><a routerLink="/characters" routerLinkActive="active"><span> / Personajes</span></a><span class="personaje"> / {{character.name}}</span>
+    </div>
+    <div class="info">
+        <img class="fotoPersonaje" [src]="getFotoPersonaje()" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt="{{character.name}}">
+        <div>
+            <h2>{{character.name}}</h2>
+            <ul>
+                <li>Año de nacimiento: {{character.birth_year}}</li>
+                <li>Especie: </li>
+                <li>Altura: {{character.height}} cm</li>
+                <li>Peso: {{character.mass}} kg</li>
+                <li>Género: {{character.gender}}</li>
+                <li>Color de pelo: {{character.hair_color}}</li>
+                <li>Color de piel: {{character.skin_color}}</li>
+                <li>Planeta de origen: </li>
+            </ul>
+        </div>
+    </div>
+</div>
