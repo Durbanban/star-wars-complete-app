@@ -9,9 +9,11 @@ import { StarshipsComponent } from './components/starships/starships.component';
 import { FilmsComponent } from './components/films/films.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
 
 const routes: Routes = [
   {path: 'character-details/:id', component: CharacterDetailsComponent},
+  {path: 'starship-details/:id' , component: StarShipsDetailComponent},
   {path: 'characters', component: CharacterComponent},
   {path: 'landing',component: LandingPageComponent},
   {path: '',redirectTo:'/landing', pathMatch: 'full'},

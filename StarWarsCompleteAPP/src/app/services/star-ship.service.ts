@@ -24,5 +24,10 @@ export class StarShipService {
     }
     return starshipList;
   }
+  public getById(id: number): Observable<starShip> {
+    return this.http.get<starShip>(`${environment.apiBaseUrl}starships/${id}`)
+  }
+
+
 
 }
