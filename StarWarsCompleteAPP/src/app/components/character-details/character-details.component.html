@@ -9,13 +9,33 @@
             <h2>{{character.name}}</h2>
             <ul>
                 <li>Año de nacimiento: {{character.birth_year}}</li>
-                <li>Especie: </li>
+                <li *ngFor="let especie of characterSpeciesList">Especie: {{especie.name}}</li>
+                <li *ngIf="characterSpeciesList.length == 0">Especie: Desconocida</li>
                 <li>Altura: {{character.height}} cm</li>
                 <li>Peso: {{character.mass}} kg</li>
                 <li>Género: {{character.gender}}</li>
                 <li>Color de pelo: {{character.hair_color}}</li>
                 <li>Color de piel: {{character.skin_color}}</li>
-                <li>Planeta de origen: </li>
+                <li>Planeta de origen: {{characterPlanet.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class = "related">
+        <div>
+            <ul>
+                <li *ngFor="let peli of characterFilmList">{{peli.title}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li *ngFor="let vehiculo of characterVehicleList">{{vehiculo.name}}</li>
+                <li *ngIf="characterVehicleList.length == 0">Este personaje no tiene vehículos</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li *ngFor="let nave of characterStarshipList">{{nave.name}}</li>
+                <li *ngIf="characterStarshipList.length == 0">Este personaje no tiene naves</li>
             </ul>
         </div>
     </div>

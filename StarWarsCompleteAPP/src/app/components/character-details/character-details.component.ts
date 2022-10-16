@@ -1,7 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from 'src/app/interfaces/character.interface';
+import { Film } from 'src/app/interfaces/film.interface';
+import { Planet } from 'src/app/interfaces/planet.interface';
+import { Species } from 'src/app/interfaces/species.interface';
+import { starShip } from 'src/app/interfaces/starship.interface';
+import { Vehicle } from 'src/app/interfaces/vehicle.interface';
 import { CharacterService } from 'src/app/services/character.service';
+import { FilmService } from 'src/app/services/film.service';
+import { PlanetService } from 'src/app/services/planet.service';
+import { SpeciesService } from 'src/app/services/species.service';
+import { StarShipService } from 'src/app/services/star-ship.service';
+import { VehicleService } from 'src/app/services/vehicle.service';
 
 @Component({
   selector: 'app-character-details',
@@ -11,9 +21,19 @@ import { CharacterService } from 'src/app/services/character.service';
 export class CharacterDetailsComponent implements OnInit {
 
   character!: Character;
-  characterFilms: Film[] = []
+  characterFilmList: Film[] = [];
+  characterVehicleList: Vehicle[] = [];
+  characterStarshipList: starShip[] = [];
+  characterSpeciesList: Species[] = [];
+  characterPlanet!: Planet;
 
-  constructor(private ruta: ActivatedRoute, private characterService: CharacterService) { }
+  constructor(private ruta: ActivatedRoute,
+     private characterService: CharacterService,
+     private planetService: PlanetService,
+     private filmService: FilmService,
+     private vehicleService: VehicleService,
+     private starshipService: StarShipService,
+     private speciesService: SpeciesService) { }
 
   ngOnInit(): void {
 
@@ -25,9 +45,33 @@ export class CharacterDetailsComponent implements OnInit {
     const personajeId = Number(this.ruta.snapshot.paramMap.get('id'));
     this.characterService.getById(personajeId).subscribe(respuesta => {
       this.character = respuesta;
+      this.planetService.getCharacterPlanet(respuesta.homeworld).subscribe(respuesta => {
+        this.characterPlanet = respuesta;
+      });      
+      
+      this.speciesService.getCharacterSpecies(respuesta.species).forEach(especie => {
+        especie.subscribe(respuesta => {
+          this.characterSpeciesList.push(respuesta);
+        })
+      })
+      
+      this.getPeliculasPersonaje();
+      
+      this.vehicleService.getCharacterVehicles(respuesta.vehicles).forEach(vehiculo => {
+        vehiculo.subscribe(respuesta => {
+          this.characterVehicleList.push(respuesta);
+        })
+      })
+      
+      this.starshipService.getCharacterStarships(respuesta.starships).forEach(nave => {
+        nave.subscribe(respuesta => {
+          this.characterStarshipList.push(respuesta);
+        })
+      })
+
     })
-
-
+    
+    
     
   }
 
@@ -35,5 +79,16 @@ export class CharacterDetailsComponent implements OnInit {
     let id = this.character.url.split("/")[5];
     return `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
   }
+
+  getPeliculasPersonaje() {
+    this.filmService.getFilms().subscribe(respuesta => {
+      respuesta.results.forEach(film => {
+        if(film.characters.includes(this.character.url)) {
+          this.characterFilmList.push(film);
+        }
+      });
+    })
+  }
+
 
 }

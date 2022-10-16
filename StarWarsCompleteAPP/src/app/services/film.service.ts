@@ -11,8 +11,8 @@ export class FilmService {
 
   constructor(private http: HttpClient) { }
 
-public getFilms(page:number): Observable<FilmResponse>{
-return this.http.get<FilmResponse>(`${environment.apiBaseUrl}films?page=${page}`)
+public getFilms(): Observable<FilmResponse>{
+return this.http.get<FilmResponse>(`${environment.apiBaseUrl}films`)
 }
 
 
