@@ -12,6 +12,7 @@ export class PlanetComponent implements OnInit {
   planetList: Planet[] = [];
   pages = 0;
   page = 0;
+  idPlaneta: any;
 
   constructor(private planetService: PlanetService) { }
 
@@ -34,8 +35,8 @@ export class PlanetComponent implements OnInit {
   }
 
   getFotoPlaneta(planeta: Planet) {
-    let id = planeta.url.split('/')[5];
-    return `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`
+    this.idPlaneta = planeta.url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/planets/${this.idPlaneta}.jpg`
   }
 
   

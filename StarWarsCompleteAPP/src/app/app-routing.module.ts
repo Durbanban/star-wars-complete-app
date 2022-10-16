@@ -10,10 +10,12 @@ import { FilmsComponent } from './components/films/films.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
+import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
 
-const routes: Routes = [
+  const routes: Routes = [
   {path: 'character-details/:id', component: CharacterDetailsComponent},
   {path: 'starship-details/:id' , component: StarShipsDetailComponent},
+  {path: 'planet-details/:id', component: PlanetDetailsComponent},
   {path: 'characters', component: CharacterComponent},
   {path: 'landing',component: LandingPageComponent},
   {path: '',redirectTo:'/landing', pathMatch: 'full'},

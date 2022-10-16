@@ -16,7 +16,7 @@
                 <li>Género: {{character.gender}}</li>
                 <li>Color de pelo: {{character.hair_color}}</li>
                 <li>Color de piel: {{character.skin_color}}</li>
-                <li>Planeta de origen: {{characterPlanet.name}}</li>
+                <li>Planeta de origen: <a routerLink="/planet-details/{{characterPlanet.url.split('/')[5]}}" routerLinkActive="active">{{characterPlanet.name}}</a></li>
             </ul>
         </div>
     </div>
@@ -37,6 +37,7 @@
                     <img mat-card-avatar [src]="getFotoVehiculo(vehiculo)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder-small.jpg'">
                     <mat-card-content class = "titulo">{{vehiculo.name}}</mat-card-content>
                 </div>
+                <mat-card-content *ngIf="characterVehicleList.length == 0">Este personaje no tiene vehículos relacionados</mat-card-content>
             </div>
         </mat-card>
         <mat-card class="tarjeta">
