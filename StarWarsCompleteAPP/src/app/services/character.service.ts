@@ -19,4 +19,14 @@ export class CharacterService {
     return this.http.get<Character>(`${environment.apiBaseUrl}people/${id}`)
   }
 
+  public getPlanetCharacters(lista: string[]): Observable<Character>[] {
+    let characterList: Observable<Character>[] = []
+    if(lista.length != 0) {
+      lista.forEach(residente => {
+        characterList.push(this.http.get<Character>(residente));
+      })
+    }
+    return characterList;
+  }
+
 }

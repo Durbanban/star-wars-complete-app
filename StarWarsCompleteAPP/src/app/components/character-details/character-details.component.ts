@@ -26,7 +26,6 @@ export class CharacterDetailsComponent implements OnInit {
   characterStarshipList: starShip[] = [];
   characterSpeciesList: Species[] = [];
   characterPlanet!: Planet;
-  fotoPrueba = 'https://starwars-visualguide.com/assets/img/characters/1.jpg';
 
   constructor(private ruta: ActivatedRoute,
      private characterService: CharacterService,
@@ -53,22 +52,22 @@ export class CharacterDetailsComponent implements OnInit {
       this.speciesService.getCharacterSpecies(respuesta.species).forEach(especie => {
         especie.subscribe(respuesta => {
           this.characterSpeciesList.push(respuesta);
-        })
-      })
+        });
+      });
       
       this.getPeliculasPersonaje();
       
       this.vehicleService.getCharacterVehicles(respuesta.vehicles).forEach(vehiculo => {
         vehiculo.subscribe(respuesta => {
           this.characterVehicleList.push(respuesta);
-        })
-      })
+        });
+      });
       
       this.starshipService.getCharacterStarships(respuesta.starships).forEach(nave => {
         nave.subscribe(respuesta => {
           this.characterStarshipList.push(respuesta);
-        })
-      })
+        });
+      });
 
     })
     
@@ -80,6 +79,8 @@ export class CharacterDetailsComponent implements OnInit {
     let id = this.character.url.split("/")[5];
     return `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
   }
+
+
 
   getPeliculasPersonaje() {
     this.filmService.getFilms().subscribe(respuesta => {

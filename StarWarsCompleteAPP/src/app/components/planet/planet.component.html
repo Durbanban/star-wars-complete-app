@@ -12,13 +12,9 @@
     </div>
     <div class = "container">
         <mat-card class="tarjeta" *ngFor="let planeta of planetList">
-            <mat-card-header>
-                <mat-card-title>{{planeta.name}}</mat-card-title>
-                <mat-card-subtitle>Diámetro: {{planeta.diameter}} km</mat-card-subtitle>
-            </mat-card-header>
             <img mat-card-image [src]="getFotoPlaneta(planeta)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt={{planeta.name}}>
-            <mat-card-content>Bioma: {{planeta.terrain}}</mat-card-content>
-
+            <mat-card-content>{{planeta.name}}</mat-card-content>
+            <mat-card-footer><button mat-raised-button color="warn" class="info" routerLink="/planet-details/{{idPlaneta}}" routerLinkActive="active">+INFO</button></mat-card-footer>
         </mat-card>
     </div>
 </div>
