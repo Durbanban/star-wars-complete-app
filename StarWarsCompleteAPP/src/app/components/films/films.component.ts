@@ -10,19 +10,17 @@ import { FilmService } from 'src/app/services/film.service';
 export class FilmsComponent implements OnInit {
 
   listadoFilms: Film [] | undefined;
-  numPages = 0;
+  
   page=0;
   constructor(private filmService: FilmService) { }
 
   ngOnInit(): void {
-    this.getFilmPage(1);
+    this.getFilm();
   }
 
-  public getFilmPage(page: number){
-    this.filmService.getFilms(page).subscribe(resp => {
+  public getFilm(){
+    this.filmService.getFilms().subscribe(resp => {
       this.listadoFilms = resp.results;
-      this.numPages = Math.ceil(resp.count /10);
-
     })
   }
 
@@ -30,7 +28,4 @@ export class FilmsComponent implements OnInit {
     return `https://starwars-visualguide.com/assets/img/films/${f.url.split('/')[5]}.jpg`;
   }
 
-  contadorPaginas(){
-    return Array(this.numPages)
-  }
 }

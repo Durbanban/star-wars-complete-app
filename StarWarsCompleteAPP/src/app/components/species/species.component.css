@@ -43,3 +43,7 @@ span.especies{
     letter-spacing: 0.4em;
     color: white;
 }
+
+.pagination {
+    margin-bottom: 15px;
+}

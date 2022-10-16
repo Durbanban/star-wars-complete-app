@@ -15,6 +15,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { FilmsComponent } from './components/films/films.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { StarshipsComponent } from './components/starships/starships.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { StarshipsComponent } from './components/starships/starships.component';
     FilmsComponent,
     VehiclesComponent,
     StarshipsComponent,
+    CharacterDetailsComponent,
   ],
   imports: [
     BrowserModule,
