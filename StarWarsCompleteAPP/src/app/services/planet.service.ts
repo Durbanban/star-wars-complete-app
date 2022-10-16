@@ -15,6 +15,10 @@ export class PlanetService {
     return this.http.get<PlanetResponse>(`${environment.apiBaseUrl}planets?page=${page}`)
   }
 
+  public getById(id: number): Observable<Planet> {
+    return this.http.get<Planet>(`${environment.apiBaseUrl}planets/${id}`);
+  }
+
   public getCharacterPlanet(url: string): Observable<Planet> {
     return this.http.get<Planet>(url);
   }
