@@ -26,6 +26,7 @@ export class CharacterDetailsComponent implements OnInit {
   characterStarshipList: starShip[] = [];
   characterSpeciesList: Species[] = [];
   characterPlanet!: Planet;
+  fotoPrueba = 'https://starwars-visualguide.com/assets/img/characters/1.jpg';
 
   constructor(private ruta: ActivatedRoute,
      private characterService: CharacterService,
@@ -88,6 +89,19 @@ export class CharacterDetailsComponent implements OnInit {
         }
       });
     })
+  }
+
+  getFotoPelicula(pelicula: Film) {
+    return `https://starwars-visualguide.com/assets/img/films/${pelicula.url.split('/')[5]}.jpg`
+  }
+  
+  getFotoVehiculo(vehiculo: Vehicle) {
+    return `https://starwars-visualguide.com/assets/img/vehicles/${vehiculo.url.split('/')[5]}.jpg`;
+
+  }
+
+  getFotoNave(nave: starShip) {
+    return `https://starwars-visualguide.com/assets/img/starships/${nave.url.split('/')[5]}.jpg`
   }
 
 

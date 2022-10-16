@@ -23,6 +23,7 @@ a {
 .info {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .info > div {
@@ -41,9 +42,31 @@ ul {
 .related {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .related > div {
     background-color: white;
+}
+
+
+.relatedContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.titulo {
+    text-align: center;
+}
+
+.peli {
+    width: 30%;
+    text-align: center;
+}
+
+.tarjeta {
+    width: 30%;
 }
