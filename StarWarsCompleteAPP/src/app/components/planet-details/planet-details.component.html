@@ -6,8 +6,8 @@
     <div class="info">
         <img class="fotoPersonaje" [src]="getFotoPlaneta()" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt="{{planet.name}}">
         <div>
-            <h2>{{planet.name}}</h2>
             <ul>
+                <h2>{{planet.name}}</h2>
                 <li>Población: {{planet.population}} habitantes</li>
                 <li>Período de rotación: {{planet.rotation_period}} dias</li>
                 <li>Período orbital: {{planet.orbital_period}} dias</li>

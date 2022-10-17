@@ -38,4 +38,15 @@ export class CharacterService {
     return characterList;
   }
 
+  public getSpeciesCharacters(lista: string[]): Observable<Character>[] {
+    let speciesList: Observable<Character>[] = [];
+    if(lista.length != 0) {
+      lista.forEach(personaje => {
+        speciesList.push(this.http.get<Character>(personaje));
+      })
+    }
+    return speciesList;
+    
+  }
+
 }

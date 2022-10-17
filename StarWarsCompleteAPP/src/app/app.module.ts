@@ -18,6 +18,7 @@ import { StarshipsComponent } from './components/starships/starships.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
 import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
+import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PlanetDetailsComponent } from './components/planet-details/planet-detai
     CharacterDetailsComponent,
     StarShipsDetailComponent,
     PlanetDetailsComponent,
+    SpeciesDetailsComponent,
   ],
   imports: [
     BrowserModule,
