@@ -9,7 +9,7 @@
             <ul>
                 <h2>{{character.name}}</h2>
                 <li>Año de nacimiento: {{character.birth_year}}</li>
-                <li *ngFor="let especie of characterSpeciesList">Especie: {{especie.name}}</li>
+                <li *ngFor="let especie of characterSpeciesList">Especie: <a routerLink="/species-details/{{especie.url.split('/')[5]}}" routerLinkActive="active">{{especie.name}}</a></li>
                 <li *ngIf="characterSpeciesList.length == 0">Especie: Desconocida</li>
                 <li>Altura: {{character.height}} cm</li>
                 <li>Peso: {{character.mass}} kg</li>
