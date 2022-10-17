@@ -18,6 +18,7 @@ export class VehicleDetailsComponent implements OnInit {
   vehicle!: Vehicle;
   vehicleCharacterList: Character[] = [];
   vehicleFilmList: Film[] = [];
+  idPersonaje: any;
 
 
   constructor(private ruta: ActivatedRoute,
@@ -56,7 +57,8 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
   getFotoPersonaje(personaje: Character) {
-    return `https://starwars-visualguide.com/assets/img/characters/${personaje.url.split('/')[5]}.jpg`
+    this.idPersonaje = personaje.url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/characters/${this.idPersonaje}.jpg`
   }
 
   getFotoVehiculo() {

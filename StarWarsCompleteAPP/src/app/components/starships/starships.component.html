@@ -7,7 +7,7 @@
     <mat-button-toggle-group name="paginacionPersonajes" aria-label="Paginación de personajes" class="pagination">
         <mat-button-toggle [disabled]="page == 1" (click)="getStarShipPage(page-1)">&#60;</mat-button-toggle>
         <mat-button-toggle [checked]="page == i+1" *ngFor="let pagina of contadorPaginas(); let i = index" (click)="getStarShipPage(i+1)">{{i+1}}</mat-button-toggle>
-        <mat-button-toggle [disabled]="page == 9" (click)="getStarShipPage(page+1)">&#62;</mat-button-toggle>
+        <mat-button-toggle [disabled]="page == 4" (click)="getStarShipPage(page+1)">&#62;</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
   <div class="container">

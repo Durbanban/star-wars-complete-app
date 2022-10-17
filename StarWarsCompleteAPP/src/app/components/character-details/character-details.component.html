@@ -35,7 +35,7 @@
             <div class="relatedContainer">
                 <div class="peli" *ngFor="let vehiculo of characterVehicleList">
                     <img mat-card-avatar [src]="getFotoVehiculo(vehiculo)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder-small.jpg'">
-                    <mat-card-content class = "titulo">{{vehiculo.name}}</mat-card-content>
+                    <mat-card-content class = "titulo"><a routerLink="/vehicle-details/{{vehiculo.url.split('/')[5]}}" routerLinkActive="active">{{vehiculo.name}}</a></mat-card-content>
                 </div>
                 <mat-card-content *ngIf="characterVehicleList.length == 0">Este personaje no tiene vehículos relacionados</mat-card-content>
             </div>
@@ -45,7 +45,7 @@
             <div class="relatedContainer">
                 <div class="peli" *ngFor="let nave of characterStarshipList">
                     <img mat-card-avatar [src]="getFotoNave(nave)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder-small.jpg'">
-                    <mat-card-content class = "titulo">{{nave.name}}</mat-card-content>
+                    <mat-card-content class = "titulo"><a routerLink="/starShip-details/{{nave.url.split('/')[5]}}" routerLinkActive="active">{{nave.name}}</a></mat-card-content>
                 </div>
                 <mat-card-content *ngIf="characterStarshipList.length == 0">Este personaje no tiene naves relacionadas</mat-card-content>
             </div>
