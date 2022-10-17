@@ -26,7 +26,8 @@ import { SpeciesDetailsComponent } from './components/species-details/species-de
     {path: 'starships', component: StarshipsComponent},
     {path: 'films', component: FilmsComponent},
     {path: 'vehicles', component: VehiclesComponent},
-    {path: '**', component: NotFoundComponent}
+    {path: '**', component: NotFoundComponent},
+    {path: 'vehicle-details/:id', component: VehiclesComponent}
 ];
 
 @NgModule({

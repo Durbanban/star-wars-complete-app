@@ -14,6 +14,10 @@ export class VehicleService {
     return this.http.get<VehicleResponse>(`${environment.apiBaseUrl}vehicles/?page=${page}`);
   }
 
+  public getById(id: number): Observable<Vehicle> {
+    return this.http.get<Vehicle>(`${environment.apiBaseUrl}vehicles/${id}`)
+  }
+
   public getCharacterVehicles(lista: string[]): Observable<Vehicle>[] {
     let vehiclesList: Observable<Vehicle>[] = [];
     if(lista.length != 0) {
