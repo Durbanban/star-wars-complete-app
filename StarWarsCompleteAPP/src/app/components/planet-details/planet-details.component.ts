@@ -49,8 +49,7 @@ export class PlanetDetailsComponent implements OnInit {
   }
 
   getFotoPlaneta() {
-    let id = this.planet.url.split('/')[5];
-    return `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`
+    return `https://starwars-visualguide.com/assets/img/planets/${this.planet.url.split('/')[5]}.jpg`
   }
 
   getFotoPelicula(pelicula: Film) {
@@ -59,7 +58,7 @@ export class PlanetDetailsComponent implements OnInit {
 
   getFotoPersonaje(personaje: Character) {
     this.idPersonaje = personaje.url.split('/')[5];
-    return `https://starwars-visualguide.com/assets/img/people/${this.idPersonaje}.jpg`
+    return `https://starwars-visualguide.com/assets/img/characters/${this.idPersonaje}.jpg`
   }
 
   
