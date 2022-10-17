@@ -2,7 +2,7 @@
 <h1>StarShips</h1>
 <div class="navigate">
   <div>
-  <a routerLink="/landing" routerLinkActive="active" class = "inicio"><span>Inicio</span></a><span class = "personajes"> / Películas</span>
+  <a routerLink="/landing" routerLinkActive="active" class = "inicio"><span>Inicio</span></a><span class = "personajes"> / Starships</span>
   </div>
   <mat-button-toggle-group name="paginacionPersonajes" aria-label="Paginación de personajes" class="pagination">
       <mat-button-toggle [disabled]="page == 1" (click)="getStarShipPage(page-1)">&#60;</mat-button-toggle>
@@ -17,6 +17,7 @@
     </mat-card-header>
     <img mat-card-image style="width: 400px; height: 250px" [src]="getPhotoURL(starShip)"
       onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt="{{ starShip.name }}" />
-    <mat-card-content>length: {{ starShip.length }} m</mat-card-content>
+    <mat-card-footer><button mat-raised-button color="warn" class="info" routerLink="/starShip-details/{{idStarship}}" routerLinkActive="active">+INFO</button></mat-card-footer>
+
   </mat-card>
 </div>
