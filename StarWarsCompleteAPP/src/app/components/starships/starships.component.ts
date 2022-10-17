@@ -9,7 +9,7 @@ import { StarShipService } from 'src/app/services/star-ship.service';
 })
 export class StarshipsComponent implements OnInit {
 
-listadoStarShips: starShip[] | undefined;
+listadoStarShips: starShip[]=[]
 numPages = 0;
 page=0;
 idStarship: any;
@@ -27,9 +27,8 @@ idStarship: any;
     })
   }
   public getPhotoURL(s: starShip): String {
-    return `https://starwars-visualguide.com/assets/img/starships/${
-      s.url.split('/')[5]
-    }.jpg`;
+    this.idStarship = s.url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/starships/${this.idStarship}.jpg`;
   }
 
   contadorPaginas() {

@@ -39,10 +39,12 @@ export class StarShipsDetailComponent implements OnInit {
       this.starShip = respuesta;
       this.getStarshipFilms();
 
-      this.starshipService.getCharacterStarships(respuesta.pilots).forEach(() => {
-        if (respuesta.pilots.includes(this.pilot.url)) {
-          this.pilotList.push(this.pilot)
-        }
+      this.characterService.getStarshipCharacter(respuesta.pilots).forEach(piloto => {
+        piloto.subscribe(respuesta => {
+          if (respuesta.starships.includes(this.starShip.url)) {
+            this.pilotList.push(respuesta)
+          }
+        })
       })
 
     })
@@ -50,7 +52,7 @@ export class StarShipsDetailComponent implements OnInit {
 
   getFotoPersonaje(personaje: Character) {
     this.idPersonaje = personaje.url.split('/')[5];
-    return `https://starwars-visualguide.com/assets/img/people/${this.idPersonaje}.jpg`
+    return `https://starwars-visualguide.com/assets/img/characters/${this.idPersonaje}.jpg`
   }
 
   getStarshipFilms(){

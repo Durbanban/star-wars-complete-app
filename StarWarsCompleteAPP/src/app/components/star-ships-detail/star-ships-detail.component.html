@@ -39,7 +39,7 @@
             <div class="relatedContainer">
                 <div class="peli" *ngFor="let piloto of pilotList">
                     <img mat-card-avatar [src]="getFotoPersonaje(piloto)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder-small.jpg'">
-                    <mat-card-content class = "titulo">{{piloto.name}}</mat-card-content>
+                    <mat-card-content class = "titulo"> <a routerLink="/character-details/{{idPersonaje}}" routerLinkActive="active">{{piloto.name}}</a></mat-card-content>
                 </div>
                 <mat-card-content *ngIf="pilotList.length == 0">Esta nave no tiene personajes que la piloten</mat-card-content>
             </div>
