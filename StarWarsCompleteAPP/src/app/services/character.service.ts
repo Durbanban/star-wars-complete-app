@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Character, CharacterResponse } from '../interfaces/character.interface';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +23,16 @@ export class CharacterService {
     if(lista.length != 0) {
       lista.forEach(residente => {
         characterList.push(this.http.get<Character>(residente));
+      })
+    }
+    return characterList;
+  }
+  
+  public getStarshipCharacter(lista: string[]): Observable<Character>[] {
+    let characterList: Observable<Character>[] = []
+    if(lista.length != 0) {
+      lista.forEach(piloto => {
+        characterList.push(this.http.get<Character>(piloto));
       })
     }
     return characterList;

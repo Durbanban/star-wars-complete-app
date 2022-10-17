@@ -16,6 +16,7 @@ import { FilmsComponent } from './components/films/films.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
 import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PlanetDetailsComponent } from './components/planet-details/planet-detai
     VehiclesComponent,
     StarshipsComponent,
     CharacterDetailsComponent,
+    StarShipsDetailComponent,
     PlanetDetailsComponent,
   ],
   imports: [

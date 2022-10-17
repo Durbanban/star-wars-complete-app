@@ -9,20 +9,22 @@ import { StarshipsComponent } from './components/starships/starships.component';
 import { FilmsComponent } from './components/films/films.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
+import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
 import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
 
-const routes: Routes = [
-  {path: 'character-details/:id', component: CharacterDetailsComponent},
-  {path: 'planet-details/:id', component: PlanetDetailsComponent},
-  {path: 'characters', component: CharacterComponent},
-  {path: 'landing',component: LandingPageComponent},
-  {path: '',redirectTo:'/landing', pathMatch: 'full'},
-  {path: 'planets', component: PlanetComponent},
-  {path: 'species', component: SpeciesComponent},
-  {path: 'starships', component: StarshipsComponent},
-  {path: 'films', component: FilmsComponent},
-  {path: 'vehicles', component: VehiclesComponent},
-  {path: '**', component: NotFoundComponent}
+  const routes: Routes = [
+    {path: 'starShip-details/:id' , component: StarShipsDetailComponent},
+    {path: 'character-details/:id', component: CharacterDetailsComponent},
+    {path: 'planet-details/:id', component: PlanetDetailsComponent},
+    {path: 'characters', component: CharacterComponent},
+    {path: 'landing',component: LandingPageComponent},
+    {path: '',redirectTo:'/landing', pathMatch: 'full'},
+    {path: 'planets', component: PlanetComponent},
+    {path: 'species', component: SpeciesComponent},
+    {path: 'starships', component: StarshipsComponent},
+    {path: 'films', component: FilmsComponent},
+    {path: 'vehicles', component: VehiclesComponent},
+    {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
