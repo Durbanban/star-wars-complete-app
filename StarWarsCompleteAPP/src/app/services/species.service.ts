@@ -28,4 +28,15 @@ export class SpeciesService {
     return SpeciesList;
   }
 
+  public getFilmsSpecies(lista: string[]): Observable<Species>[] {
+    let filmList: Observable<Species>[] = [];
+    if(lista.length != 0) {
+      lista.forEach(especie => {
+        filmList.push(this.http.get<Species>(especie));
+      })
+    }
+    return filmList;
+    
+  }
+
 }

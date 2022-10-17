@@ -23,4 +23,15 @@ export class VehicleService {
     }
     return vehiclesList;
   }
+
+  public getFilmsvehicles(lista: string[]): Observable<Vehicle>[] {
+    let filmList: Observable<Vehicle>[] = [];
+    if(lista.length != 0) {
+      lista.forEach(coche => {
+        filmList.push(this.http.get<Vehicle>(coche));
+      })
+    }
+    return filmList;
+    
+  }
 }

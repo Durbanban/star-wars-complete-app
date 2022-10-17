@@ -49,4 +49,15 @@ export class CharacterService {
     
   }
 
+  public getFilmsCharacters(lista: string[]): Observable<Character>[] {
+    let filmList: Observable<Character>[] = [];
+    if(lista.length != 0) {
+      lista.forEach(personaje => {
+        filmList.push(this.http.get<Character>(personaje));
+      })
+    }
+    return filmList;
+    
+  }
+
 }

@@ -12,11 +12,13 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
 import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
+import { FilmDetailsComponent } from './components/film-details/film-details.component';
 
   const routes: Routes = [
     {path: 'species-details/:id', component: SpeciesDetailsComponent},
     {path: 'starShip-details/:id' , component: StarShipsDetailComponent},
     {path: 'character-details/:id', component: CharacterDetailsComponent},
+    {path: 'film-details/:id', component: FilmDetailsComponent},
     {path: 'planet-details/:id', component: PlanetDetailsComponent},
     {path: 'characters', component: CharacterComponent},
     {path: 'landing',component: LandingPageComponent},
