@@ -12,12 +12,9 @@
     </div>
     <div class="container">
         <mat-card class="tarjeta" *ngFor="let especie of speciesList">
-            <mat-card-header>
-                <mat-card-title>{{especie.name}}</mat-card-title>
-                <mat-card-subtitle>{{especie.classification}}</mat-card-subtitle>
-            </mat-card-header>
             <img mat-card-image [src]="getFotoEspecie(especie)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt="{{especie.name}}">
-            <mat-card-content>Altura: {{especie.average_height}} cm</mat-card-content>
+            <mat-card-content>{{especie.name}}</mat-card-content>
+            <mat-card-footer><button mat-raised-button color="warn" class="info" routerLink="/species-details/{{idEspecie}}" routerLinkActive="active">+INFO</button></mat-card-footer>
         </mat-card>
     </div>
 </div>

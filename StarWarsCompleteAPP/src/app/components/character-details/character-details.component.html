@@ -6,8 +6,8 @@
     <div class="info">
         <img class="fotoPersonaje" [src]="getFotoPersonaje()" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt="{{character.name}}">
         <div>
-            <h2>{{character.name}}</h2>
             <ul>
+                <h2>{{character.name}}</h2>
                 <li>Año de nacimiento: {{character.birth_year}}</li>
                 <li *ngFor="let especie of characterSpeciesList">Especie: {{especie.name}}</li>
                 <li *ngIf="characterSpeciesList.length == 0">Especie: Desconocida</li>

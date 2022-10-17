@@ -12,6 +12,7 @@ export class SpeciesComponent implements OnInit {
   speciesList: Species[] = [];
   pages = 0;
   page = 0;
+  idEspecie: any;
 
   constructor(private speciesService: SpeciesService) { }
 
@@ -32,8 +33,8 @@ export class SpeciesComponent implements OnInit {
   }
 
   getFotoEspecie(especie: Species) {
-    let id = especie.url.split('/')[5];
-    return `https://starwars-visualguide.com/assets/img/species/${id}.jpg`
+    this.idEspecie = especie.url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/species/${this.idEspecie}.jpg`
   }
 
 }

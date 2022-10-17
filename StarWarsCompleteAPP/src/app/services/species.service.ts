@@ -15,6 +15,10 @@ export class SpeciesService {
     return this.http.get<SpeciesResponse>(`${environment.apiBaseUrl}species?page=${page}`)
   }
 
+  public getById(id: number): Observable<Species> {
+    return this.http.get<Species>(`${environment.apiBaseUrl}species/${id}`);
+  }
+
   public getCharacterSpecies(lista: string[]): Observable<Species>[] {
     let SpeciesList: Observable<Species>[] = []
     if(lista.length != 0)
