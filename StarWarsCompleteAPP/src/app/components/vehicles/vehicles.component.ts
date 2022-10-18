@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from 'src/app/interfaces/vehicle.interface';
 import { VehicleService } from 'src/app/services/vehicle.service';
@@ -8,9 +9,10 @@ import { VehicleService } from 'src/app/services/vehicle.service';
   styleUrls: ['./vehicles.component.css'],
 })
 export class VehiclesComponent implements OnInit {
-  listadoVehiculos: Vehicle[] | undefined;
+  listadoVehiculos: Vehicle[] = [];
   page = 0;
   numPages = 0;
+  idVehiculo: any;
 
   constructor(private vehicleService: VehicleService) {}
 
@@ -23,6 +25,7 @@ export class VehiclesComponent implements OnInit {
   }
 
   getVehiclesPage(page: number) {
+    this.page = page;
     this.vehicleService.getVehicles(page).subscribe(resp => {
       this.listadoVehiculos = resp.results;
       this.numPages = Math.ceil(resp.count / 10);
@@ -30,8 +33,8 @@ export class VehiclesComponent implements OnInit {
   }
 
   public getPhotoURL(v: Vehicle): String {
-    return `https://starwars-visualguide.com/assets/img/vehicles/${
-      v.url.split('/')[5]
-    }.jpg`;
+    this.idVehiculo = v.url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/vehicles/${this.idVehiculo}.jpg`;
+
   }
 }
