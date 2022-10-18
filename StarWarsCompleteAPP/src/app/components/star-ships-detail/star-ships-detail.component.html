@@ -6,8 +6,8 @@
     <div class="info">
         <img class="fotoStarship" [src]="getPhotoURL(starShip)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'" alt="{{starShip.name}}">
         <div>
-            <h2>{{starShip.name}}</h2>
             <ul>
+                <h2>{{starShip.name}}</h2>
                 <li>Model: {{starShip.model}}</li>
                 <li>Manufacturer: {{starShip.manufacturer}}</li>
                 <li>Class: {{starShip.starship_class}}</li>

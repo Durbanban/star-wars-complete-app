@@ -21,9 +21,10 @@ idStarship: any;
   }
 
   getStarShipPage(page:number){
+    this.page = page;
     this.starShipService.getStarShip(page).subscribe(resp => {
       this.listadoStarShips = resp.results
-      this.numPages = Math.ceil(resp.count /10);
+      this.numPages = Math.ceil(resp.count / 10);
     })
   }
   public getPhotoURL(s: starShip): String {

@@ -1,5 +1,6 @@
 .tarjeta {
     max-width: 25%;
+    text-align: center;
 
 }
 .container {
@@ -36,4 +37,16 @@ span.personajes{
   font-family: 'Biko', sans-serif;
   letter-spacing: 0.4em;
   color: white;
+}
+
+.pagination {
+  margin-bottom: 15px;
+}
+
+.mainContainer {
+  margin: auto;
+}
+
+.info {
+  margin-bottom: 10px;
 }

@@ -57,7 +57,15 @@ export class CharacterService {
       })
     }
     return filmList;
-    
+  }  
+  public getVehicleCharacters(lista: string[]): Observable<Character>[] {
+    let vehicleList: Observable<Character>[] = [];
+    if(lista.length != 0) { 
+      lista.forEach(piloto => {
+        vehicleList.push(this.http.get<Character>(piloto));
+      })
+    }
+    return vehicleList;
   }
 
 }
