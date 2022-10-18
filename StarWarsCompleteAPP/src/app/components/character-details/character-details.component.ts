@@ -26,6 +26,7 @@ export class CharacterDetailsComponent implements OnInit {
   characterStarshipList: starShip[] = [];
   characterSpeciesList: Species[] = [];
   characterPlanet!: Planet;
+  idFilm: any;
 
   constructor(private ruta: ActivatedRoute,
      private characterService: CharacterService,
@@ -93,7 +94,8 @@ export class CharacterDetailsComponent implements OnInit {
   }
 
   getFotoPelicula(pelicula: Film) {
-    return `https://starwars-visualguide.com/assets/img/films/${pelicula.url.split('/')[5]}.jpg`
+    this.idFilm = pelicula.url.split('/')[5]
+    return `https://starwars-visualguide.com/assets/img/films/${this.idFilm}.jpg`
   }
   
   getFotoVehiculo(vehiculo: Vehicle) {

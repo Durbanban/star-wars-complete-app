@@ -27,7 +27,7 @@ export class FilmsComponent implements OnInit {
 
   public getPhotoURL(f: Film): String {
     this.idFilm = f.url.split('/')[5];
-    return `https://starwars-visualguide.com/assets/img/films/${f.url.split('/')[5]}.jpg`;
+    return `https://starwars-visualguide.com/assets/img/films/${this.idFilm}.jpg`;
   }
 
 }

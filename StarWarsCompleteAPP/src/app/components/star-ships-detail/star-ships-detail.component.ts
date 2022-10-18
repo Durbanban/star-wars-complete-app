@@ -20,6 +20,7 @@ export class StarShipsDetailComponent implements OnInit {
   fotoPrueba = 'https://starwars-visualguide.com/assets/img/characters/1.jpg';
   pilot!: Character;
   idPersonaje:any;
+  idFilm:any;
 
   constructor(private ruta: ActivatedRoute,
      private filmService: FilmService,
@@ -66,7 +67,8 @@ export class StarShipsDetailComponent implements OnInit {
     })
   }
   getFotoPelicula(pelicula: Film) {
-    return `https://starwars-visualguide.com/assets/img/films/${pelicula.url.split('/')[5]}.jpg`
+    this.idFilm=pelicula.url.split('/')[5]
+    return `https://starwars-visualguide.com/assets/img/films/${this.idFilm}.jpg`
   }
 
   public getPhotoURL(s: starShip): String {

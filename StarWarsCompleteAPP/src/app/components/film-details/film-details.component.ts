@@ -22,11 +22,15 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 export class FilmDetailsComponent implements OnInit {
   film!: Film;
   starshipFilmlist: starShip[] = [];
-  idPersonaje: any;
   characterFilmlist: Character[] = [];
   vehicleFilmList: Vehicle[]=[];
   planetFilmList: Planet[]=[]
   specieFilmList: Species[]=[]
+  idPlanet: any;
+  idVehicle: any;
+  idStarship: any;
+  idPersonaje: any;
+  idSpecie: any;
 
   constructor(
     private ruta: ActivatedRoute,
@@ -46,12 +50,15 @@ export class FilmDetailsComponent implements OnInit {
     const peliId = Number(this.ruta.snapshot.paramMap.get('id'));
     this.filmService.getById(peliId).subscribe((respuesta) => {
       this.film = respuesta;
-      this.getStarshipFilms;
-      this.getCharactersFilms;
-      this.getvehicleFilms;
-      this.getPlanetFilms;
-      this.getStarshipFilms
-    });
+      this.getStarshipFilms();
+      this.getCharactersFilms();
+      this.getvehicleFilms();
+      this.getPlanetFilms();
+      this.getStarshipFilms();
+      this.getSpeciesFilms();
+
+    }); 
+    
   }
 
 
@@ -62,6 +69,7 @@ export class FilmDetailsComponent implements OnInit {
         this.vehicleFilmList.push(respuesta)
       })
     })
+
   }
 
   getPlanetFilms() {
@@ -121,18 +129,22 @@ export class FilmDetailsComponent implements OnInit {
   }
   
   getFotoVehiculo(vehiculo: Vehicle) {
+    this.idVehicle = vehiculo.url.split('/')[5];
     return `https://starwars-visualguide.com/assets/img/vehicles/${vehiculo.url.split('/')[5]}.jpg`;
 
   }
   getFotoNave(nave: starShip) {
+    this.idStarship = nave.url.split('/')[5];
     return `https://starwars-visualguide.com/assets/img/starships/${nave.url.split('/')[5]}.jpg`
   }
   
   getFotoEspecie(especie: Species) {
+    this.idSpecie = especie.url.split('/')[5];
     return `https://starwars-visualguide.com/assets/img/species/${especie.url.split('/')[5]}.jpg`
   }
   
   getFotoPlaneta(planeta: Planet) {
+    this.idPlanet = planeta.url.split('/')[5];
     return `https://starwars-visualguide.com/assets/img/planets/${planeta.url.split('/')[5]}.jpg`
   }
 }
