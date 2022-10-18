@@ -19,6 +19,7 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 import { StarShipsDetailComponent } from './components/star-ships-detail/star-ships-detail.component';
 import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
+import { FilmDetailsComponent } from './components/film-details/film-details.component';
 import { VehicleDetailsComponent } from './components/vehicle-details/vehicle-details.component';
 
 @NgModule({
@@ -37,6 +38,7 @@ import { VehicleDetailsComponent } from './components/vehicle-details/vehicle-de
     StarShipsDetailComponent,
     PlanetDetailsComponent,
     SpeciesDetailsComponent,
+    FilmDetailsComponent,
     VehicleDetailsComponent,
   ],
   imports: [

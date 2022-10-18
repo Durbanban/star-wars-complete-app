@@ -18,6 +18,7 @@ export class SpeciesDetailsComponent implements OnInit {
   speciesCharacterList: Character[] = [];
   speciesFilmList: Film[] = [];
   idPersonaje: any;
+  idFilm:any;
 
   constructor(private ruta: ActivatedRoute,
     private speciesService: SpeciesService,
@@ -59,7 +60,8 @@ export class SpeciesDetailsComponent implements OnInit {
   }
 
   getFotoPelicula(pelicula: Film) {
-    return `https://starwars-visualguide.com/assets/img/films/${pelicula.url.split('/')[5]}.jpg`
+    this.idFilm=pelicula.url.split('/')[5]
+    return `https://starwars-visualguide.com/assets/img/films/${this.idFilm}.jpg`
   }
 
   getFotoPersonaje(personaje: Character) {

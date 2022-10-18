@@ -22,4 +22,15 @@ export class PlanetService {
   public getCharacterPlanet(url: string): Observable<Planet> {
     return this.http.get<Planet>(url);
   }
+
+  public getFilmsPlanet(lista: string[]): Observable<Planet>[] {
+    let filmList: Observable<Planet>[] = [];
+    if(lista.length != 0) {
+      lista.forEach(planeta => {
+        filmList.push(this.http.get<Planet>(planeta));
+      })
+    }
+    return filmList;
+    
+  }
 }

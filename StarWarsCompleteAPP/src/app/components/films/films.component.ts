@@ -12,6 +12,7 @@ export class FilmsComponent implements OnInit {
   listadoFilms: Film [] | undefined;
   
   page=0;
+  idFilm: any;
   constructor(private filmService: FilmService) { }
 
   ngOnInit(): void {
@@ -25,7 +26,8 @@ export class FilmsComponent implements OnInit {
   }
 
   public getPhotoURL(f: Film): String {
-    return `https://starwars-visualguide.com/assets/img/films/${f.url.split('/')[5]}.jpg`;
+    this.idFilm = f.url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/films/${this.idFilm}.jpg`;
   }
 
 }

@@ -25,7 +25,7 @@
             <div class = "relatedContainer">
                 <div class="peli" *ngFor="let peli of speciesFilmList">
                     <img mat-card-avatar [src]="getFotoPelicula(peli)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder-small.jpg'">
-                    <mat-card-content class = "titulo">{{peli.title}}</mat-card-content>
+                    <mat-card-content class = "titulo"><a routerLink="/film-details/{{idFilm}}" routerLinkActive="active">{{peli.title}}</a></mat-card-content>
                 </div>
                 <mat-card-content *ngIf="speciesFilmList.length == 0">Esta especie no tiene películas relacionadas</mat-card-content>
             </div>

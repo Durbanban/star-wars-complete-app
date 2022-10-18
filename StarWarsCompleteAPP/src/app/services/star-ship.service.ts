@@ -28,6 +28,10 @@ export class StarShipService {
     return this.http.get<starShip>(`${environment.apiBaseUrl}starships/${id}`)
   }
 
+  public getStarships(): Observable<StarShipResponse>{
+    return this.http.get<StarShipResponse>(`${environment.apiBaseUrl}starships`)
+    }
+
 
 
 }
